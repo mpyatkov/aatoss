@@ -180,6 +180,12 @@ getResultsFromServer <- function(send_object) {
   }
 }
 
+#' Get all results from server
+#'
+#' @param email
+#'
+#' @return data.frame with all results from server (without input sequences, only Q3 and Q8)
+#' @export
 getAllResultsFromServer <- function(email) {
   fake_object <- list(sequences=data.frame(target=c(character()),
                                            fasta=c(character()),
@@ -189,24 +195,4 @@ getAllResultsFromServer <- function(email) {
 
   getResultsFromServer(fake_object)
 }
-
-
-# email = "testtest1@test.com"
-# testseq <- data.frame(target = c("new_testqq",
-#                                  "new_testqq2"),
-#                       fasta = c("RDPHPAPPRTSQEPHQNPHGVIPSESKPFVASKPKPHT",
-#                                 "PSLPRPPGCPAQQGGSAPIDPPPVHESPHPPLPATEPASRLSSE"),
-#                       stringsAsFactors=FALSE)
-#
-# df_to_fastaline(testseq)
-#
-# strObj <- sendToServer(testseq, email)
-# str(strObj)
-#
-# res <- getResultsFromServer(strObj)
-# res
-#
-# res1 <- getAllResultsFromServer(email)
-# res1
-
 
