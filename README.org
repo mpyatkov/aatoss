@@ -11,6 +11,10 @@
 #+OPTIONS:   p:t
 #+OPTIONS: html-postamble:nil
 
+* Description
+
+  This package provide basic access to [[http://dslsrv2.eecs.missouri.edu/~zlht3/ss][MUFOLD]] server. You can send sequences to server and take back information about secondary structure. The server limitations is: 10 sequences at one request and each sequence no longer than 1000 amino acids in length. You can information about your job using this [[http://dslsrv2.eecs.missouri.edu/~zlht3/ss/myjob][link]]. 
+
 * Install 
   For install you can use devtools:
 
@@ -20,11 +24,13 @@
   #+END_SRC
 
 * Usage 
-  #+BEGIN_SRC R
+  #+BEGIN_SRC sh
+    library(aatoss)
+
     email = "test11@test.com"
     testseq <- data.frame(target = c("fasta_seq1", "fasta_seq2"),
                           fasta  = c("RDPHPAPPRTSQEPHQNPHGVIPSESKPFVASKPKPHT",
-                                     "PSLPRPPGCPAQQGGSAPIDPPPVHESPHPPLPATEPASRLSSE"),
+                                     "PSLPRPPGCPAQQGGSAPIDPPPVHESPHPPLPATEPA"),
                           stringsAsFactors=FALSE)
 
     # send sequences to server
